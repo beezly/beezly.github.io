@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/beezly
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://beez.ly
+  * I am beezly (https://keybase.io/beezly) on keybase.
+  * I have a public key ASDNvllr_Olk8eWMkKOlv441pkwjsekxxUPYZpreI95i5Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01206ac6d820fb358b06716855d701a335af611b997c3e343a600223dfab52f3e3640a",
+      "host": "keybase.io",
+      "kid": "0120cdbe596bfce964f1e58c90a3a5bf8e35a64c23b1e931c543d8669ade23de62e50a",
+      "uid": "b4389195e38c14542979e51d86de6019",
+      "username": "beezly"
+    },
+    "merkle_root": {
+      "ctime": 1521624302,
+      "hash": "a520afd355891cc30cd2f39ad68be69dfac22773cc00c66172c28a6b8868e9f3a7a7c19c1c605d4f88a847cbf713371ecdc4a7785efbf3551df774fb84d5635a",
+      "hash_meta": "2ac6aabe7cc8b99eff1921a78e62b408671f69daa5cfa0e4592bf72c83bbb83b",
+      "seqno": 2265519
+    },
+    "service": {
+      "hostname": "beez.ly",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.45"
+  },
+  "ctime": 1521624309,
+  "expire_in": 504576000,
+  "prev": "f60a73c756bf5f42c5aa5712c99dbedcd4d3919644469895ba3921764744c096",
+  "seqno": 20,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgzb5Za/zpZPHljJCjpb+ONaZMI7HpMcVD2Gaa3iPeYuUKp3BheWxvYWTFAz17ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNmFjNmQ4MjBmYjM1OGIwNjcxNjg1NWQ3MDFhMzM1YWY2MTFiOTk3YzNlMzQzYTYwMDIyM2RmYWI1MmYzZTM2NDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwY2RiZTU5NmJmY2U5NjRmMWU1OGM5MGEzYTViZjhlMzVhNjRjMjNiMWU5MzFjNTQzZDg2NjlhZGUyM2RlNjJlNTBhIiwidWlkIjoiYjQzODkxOTVlMzhjMTQ1NDI5NzllNTFkODZkZTYwMTkiLCJ1c2VybmFtZSI6ImJlZXpseSJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUyMTYyNDMwMiwiaGFzaCI6ImE1MjBhZmQzNTU4OTFjYzMwY2QyZjM5YWQ2OGJlNjlkZmFjMjI3NzNjYzAwYzY2MTcyYzI4YTZiODg2OGU5ZjNhN2E3YzE5YzFjNjA1ZDRmODhhODQ3Y2JmNzEzMzcxZWNkYzRhNzc4NWVmYmYzNTUxZGY3NzRmYjg0ZDU2MzVhIiwiaGFzaF9tZXRhIjoiMmFjNmFhYmU3Y2M4Yjk5ZWZmMTkyMWE3OGU2MmI0MDg2NzFmNjlkYWE1Y2ZhMGU0NTkyYmY3MmM4M2JiYjgzYiIsInNlcW5vIjoyMjY1NTE5fSwic2VydmljZSI6eyJob3N0bmFtZSI6ImJlZXoubHkiLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjQ1In0sImN0aW1lIjoxNTIxNjI0MzA5LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6ImY2MGE3M2M3NTZiZjVmNDJjNWFhNTcxMmM5OWRiZWRjZDRkMzkxOTY0NDQ2OTg5NWJhMzkyMTc2NDc0NGMwOTYiLCJzZXFubyI6MjAsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAMJoSBYiaAp8hwGw09STmDb94DLEz0jAL9VsI+SNemN185OJ337g2Ap3joCuJYbqGLWPhhbzm1M+ohtpIkhpzDqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIDsoFH8LW1MyH3NqVYJ7Q9zZdilYJJvpeZ/aB3f1rlexo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/beezly
+
+==================================================================

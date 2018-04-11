@@ -22,6 +22,10 @@ In the terraform VM resource I configure the VM to use the public key. In this e
     
         <attributes not relevant to this example>
 
+        os_profile {
+            admin_username = "setup"
+        }
+
         os_profile_linux_config {
             disable_password_authentication = true
 

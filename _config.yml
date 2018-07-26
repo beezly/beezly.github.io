@@ -31,7 +31,7 @@ plugins:
 disqus:
   shortname: beez-ly
 
-google_analytics: UA-5103860-1
+google_analytics: UA-51038604-1
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

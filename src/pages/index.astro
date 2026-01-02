@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Introduction from "../components/Introduction.astro";
+import Featured from "../components/Featured.astro";
+---
+
+<BaseLayout
+  title="Andrew Beresford"
+  description="Platform engineering and infrastructure blog"
+  author="Andrew Beresford"
+  url="https://beez.ly"
+>
+  <div class="center">
+    <section>
+      <Introduction />
+    </section>
+    <hr />
+    <section>
+      <Featured />
+    </section>
+  </div>
+</BaseLayout>

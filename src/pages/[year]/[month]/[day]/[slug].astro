@@ -1,0 +1,61 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blogs");
+
+  // Map of old Jekyll URLs to new slugs
+  const redirects = [
+    {
+      year: "2014",
+      month: "05",
+      day: "15",
+      slug: "building-a-development-cas-environment-with-casinoapp-and-casino-test_authenticator",
+    },
+    {
+      year: "2014",
+      month: "06",
+      day: "02",
+      slug: "migrating-an-lvm-logical-volume-onto-a-new-block-device-without-downtime",
+    },
+    {
+      year: "2018",
+      month: "04",
+      day: "11",
+      slug: "provisioning-virtual-machines-using-ephemeral-ssh-keys-in-terraform",
+    },
+    {
+      year: "2018",
+      month: "07",
+      day: "25",
+      slug: "authenticating-azure-users-with-hashicorp-vault",
+    },
+  ];
+
+  return redirects.map((redirect) => ({
+    params: {
+      year: redirect.year,
+      month: redirect.month,
+      day: redirect.day,
+      slug: redirect.slug,
+    },
+    props: {
+      newUrl: `/${redirect.slug}/`,
+    },
+  }));
+}
+
+export async function GET({ props }: any) {
+  return new Response(null, {
+    status: 301,
+    headers: {
+      Location: props.newUrl,
+    },
+  });
+}
+
+const { newUrl } = Astro.props;
+
+// Also handle non-.html requests by returning a redirect response
+return Astro.redirect(newUrl, 301);
+---

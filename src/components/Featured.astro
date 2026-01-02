@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import type { BlogType } from "../content.config";
+import FeatureCard from "./FeatureCard.astro";
+
+const blogs: BlogType[] = await getCollection("blogs");
+const blogs_ = blogs.map((blog) => {
+  const words = (blog.body ?? "").split(/\s+/).filter(Boolean).length;
+  const minutes = Math.ceil(words / 200);
+
+  // Extract excerpt - first paragraph or first 200 characters
+  const moreIndex = blog.body.indexOf("<!--more-->");
+  let excerpt = "";
+  if (moreIndex > 0) {
+    excerpt = blog.body.substring(0, moreIndex).trim();
+  } else {
+    // Get first paragraph or first 200 chars
+    const firstParagraph = blog.body.split("\n\n")[0];
+    excerpt = firstParagraph.length > 200
+      ? firstParagraph.substring(0, 200) + "..."
+      : firstParagraph;
+  }
+
+  // Strip markdown syntax from excerpt
+  excerpt = excerpt
+    .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1") // [text](url) -> text
+    .replace(/`([^`]+)`/g, "$1") // `code` -> code
+    .replace(/\*\*([^*]+)\*\*/g, "$1") // **bold** -> bold
+    .replace(/\*([^*]+)\*/g, "$1") // *italic* -> italic
+    .replace(/^#+\s+/gm, "") // # headers -> headers
+    .replace(/<!--more-->/g, "")
+    .trim();
+
+  return {
+    ...blog,
+    data: { ...blog.data, readTime: minutes },
+    excerpt,
+  };
+});
+const recentBlogs = blogs_
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 5);
+---
+
+<h2 class="section-heading">R E C E N T  P O S T S</h2>
+<ul class="grid gap-3 py-6 md:grid-cols-1">
+  {
+    recentBlogs.map((blog: BlogType & { excerpt: string }) => {
+      return (
+        <li>
+          <FeatureCard
+            title={blog.data.title}
+            date={blog.data.date
+              .toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+              })
+              .slice(0, 11)}
+            url={`/${blog.data.slug}`}
+            tags={blog.data.tags}
+            readTime={blog.data.readTime}
+            excerpt={blog.excerpt}
+          />
+        </li>
+      );
+    })
+  }
+</ul>

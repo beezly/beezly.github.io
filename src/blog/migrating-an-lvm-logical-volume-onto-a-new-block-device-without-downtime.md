@@ -5,7 +5,7 @@ description: "Step-by-step guide to live-migrating a Linux filesystem from local
 date: 2014-06-02
 author: "Andrew Beresford"
 tags: ["linux", "lvm", "storage"]
-featured: true
+featured: false
 editable: false
 ---
 

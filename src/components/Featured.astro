@@ -38,8 +38,8 @@ const blogs_ = blogs.map((blog) => {
   };
 });
 const recentBlogs = blogs_
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 5);
+  .filter((blog: BlogType) => blog.data.featured === true)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <h2 class="section-heading">R E C E N T  P O S T S</h2>

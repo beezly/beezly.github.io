@@ -5,7 +5,7 @@ description: "Improve security when bootstrapping cloud VMs by using Terraform's
 date: 2018-04-11
 author: "Andrew Beresford"
 tags: ["terraform", "ssh", "azure"]
-featured: true
+featured: false
 editable: false
 ---
 When provisioning Linux VMs in the cloud, it is useful to use SSH keys to bootstrap the VMs with some initial configuration. This post explains how to provision your VMs using a disposable SSH key.

@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Projects"
+  description="Other projects and documentation by Andrew Beresford"
+  author="Andrew Beresford"
+  url="https://beez.ly/projects"
+>
+  <div class="center">
+    <h1 class="heading">Projects</h1>
+    <div class="paragraph">
+      <p>
+        Other projects and documentation I'm working on:
+      </p>
+    </div>
+
+    <div class="my-8 space-y-6">
+      <div class="ring-background hover:bg-accent hover:ring-accent group animation rounded-lg p-6 shadow-lg ring-3 hover:shadow-none dark:shadow-2xl">
+        <h2 class="text-foreground group-hover:text-background animation mb-2 text-2xl font-semibold">
+          <a href="https://beez.ly/unifi-apis" target="_blank" rel="noopener noreferrer" class="hover:text-accent">
+            Unifi APIs Documentation
+          </a>
+        </h2>
+        <p class="text-foreground/80 group-hover:text-background/90 animation">
+          Comprehensive documentation for Ubiquiti Unifi Network Controller APIs, including endpoints, request/response formats, and examples.
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

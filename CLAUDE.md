@@ -33,19 +33,22 @@ The site auto-deploys to GitHub Pages when changes are pushed to the `master` br
 - `src/layouts/BaseLayout.astro` - Base HTML layout with header, footer, dark mode, and GoatCounter analytics
 - `src/layouts/BlogLayout.astro` - Blog post layout with reading progress bar, metadata, and tags
 - `src/components/Header.astro` - Site header with navigation, theme toggle, and RSS link
+- `src/components/Navigation.astro` - Navigation menu (archive, tags, projects)
 - `src/components/Footer.astro` - Site footer with social links and copyright
 - `src/components/Socials.astro` - Social media links (LinkedIn, GitHub)
-- `src/components/Introduction.astro` - Homepage introduction/bio section
-- `src/components/Featured.astro` - Featured posts section
-- `src/components/PostCard.astro` - Reusable post card component with animations
+- `src/components/Introduction.astro` - Homepage introduction/bio section (describes site as "archive" of technical posts)
+- `src/components/Featured.astro` - Recent posts section (shows 5 most recent posts with excerpts, not just featured)
+- `src/components/FeatureCard.astro` - Card component for displaying posts with title, date, tags, and excerpt
+- `src/components/PostCard.astro` - Reusable post card component with animations (used in archive/tag pages)
 - `src/components/ThemeToggle.tsx` - React component for dark/light mode toggle
 - `src/components/ProgressBar.tsx` - React component for reading progress indicator
 - `src/components/Title.astro` - Blog post title component with date and tags
 - `src/components/Year.astro` - Archive year grouping component
 
 ### Pages
-- `src/pages/index.astro` - Homepage with Introduction, Featured, and Newsletter sections
-- `src/pages/404.astro` - Custom 404 error page
+- `src/pages/index.astro` - Homepage with Introduction and Recent Posts sections (no newsletter)
+- `src/pages/projects.astro` - Projects page listing external projects and documentation
+- `src/pages/404.astro` - Custom 404 error page with back-to-home link
 - `src/pages/[...slug].astro` - Dynamic routes for blog posts (URL: `/slug/`)
 - `src/pages/archive/[page].astro` - Paginated archive of all posts
 - `src/pages/archive/[year]/[page].astro` - Paginated archive by year
@@ -131,7 +134,8 @@ Use `<!--more-->` to mark the excerpt cutoff point for the homepage listing.
 ## URL Structure
 
 - Homepage: `/`
-- Blog posts: `/slug/` (e.g., `/authenticating-azure-users-with-hashicorp-vault/`)
+- Projects: `/projects` - Lists external projects and documentation
+- Blog posts: `/slug/` (e.g., `/managing-unifi-content-filters-with-cli-tool/`)
 - Archive (all): `/archive/1/` (paginated)
 - Archive (by year): `/archive/2018/1/` (paginated)
 - Tags (listing): `/tags/`
@@ -140,13 +144,51 @@ Use `<!--more-->` to mark the excerpt cutoff point for the homepage listing.
 - RSS feed: `/rss.xml`
 - Robots: `/robots.txt`
 
+## Site Content & Organization
+
+### Blog Posts (5 total)
+1. **Managing Unifi Content Filters with CLI tool** (2026-01-02) - Featured ✓ (shown on homepage)
+   - Tags: unifi, network, python, dns
+   - About sync_unifi_filters Python CLI tool
+2. **Authenticating Azure users with Hashicorp Vault** (2018-07-25)
+   - Tags: hashicorp, vault, azure
+3. **Provisioning VMs Using Ephemeral SSH Keys in Terraform** (2018-04-11)
+   - Tags: terraform, ssh, azure
+4. **Migrating LVM logical volume without downtime** (2014-06-02)
+   - Tags: linux, lvm, storage
+5. **Building CAS environment with CASinoApp** (2014-05-15)
+   - Tags: cas, ruby, development
+
+**Note**: Only the 2026 post is featured and appears on homepage. Older posts (2014-2018) are archived but accessible via archive/tags pages.
+
+### Homepage Structure
+- **Introduction**: Bio stating site is "an archive of technical posts"
+- **Recent Posts**: Shows only featured posts with:
+  - Currently: Only 2026 Unifi post (old posts unfeatured)
+  - Title, date, read time
+  - Content excerpt (extracted before `<!--more-->` marker or first paragraph)
+  - Tags (shown on hover)
+  - Grid layout (single column for readability)
+- **No Newsletter Section**: Removed entirely
+
+### Navigation
+- **archive** - All posts paginated
+- **tags** - Browse posts by tag
+- **projects** - External projects and documentation
+
+### External Projects
+- **Unifi APIs Documentation** (https://beez.ly/unifi-apis)
+  - Comprehensive API documentation for Ubiquiti Unifi Network Controllers
+
 ## Important Notes
 
-- **Migration**: Migrated from Jekyll to Astro in January 2026, then to Ryze theme (previous custom Astro in `_astro_backup/`, original Jekyll in `_jekyll_backup/`)
+- **Migration**: Migrated from Jekyll to Astro in January 2026, then to Ryze theme (original Jekyll in `_jekyll_backup/`)
 - **Theme**: Uses Ryze theme as base with customizations (site name, social links, analytics, content)
 - **Comments**: No comments system (never re-added after migration)
 - **Social**: LinkedIn and GitHub links only (YouTube, Discord, Twitter removed from Ryze defaults)
-- **Newsletter**: Newsletter section exists but not configured/used
+- **Newsletter**: Completely removed (not just unconfigured)
+- **Featured Posts**: Only 1 post marked as featured (2026 Unifi post) - old posts unfeatured to keep homepage current
+- **Recent Content**: Homepage shows only 2026 content, older posts accessible via archive
 - **Content Collections**: Provide TypeScript type safety for all blog posts (using "blogs" collection)
 - **Blog Focus**: All content is technical/platform engineering focused
 - **Performance**: Site uses minimal JavaScript - React islands for theme toggle and progress bar, otherwise static HTML/CSS
@@ -154,3 +196,4 @@ Use `<!--more-->` to mark the excerpt cutoff point for the homepage listing.
 - **Language**: Use British English
 - **Analytics**: GoatCounter only loads in production (not development)
 - **Redirects**: Both `/YYYY/MM/DD/slug/` and `/YYYY/MM/DD/slug.html` redirect to new URLs
+- **Favicon**: Custom "AB" initials favicon matching site color scheme

@@ -2,7 +2,7 @@
 export interface Props {
   title: string;
   description: string;
-  activeSubPage: "overview" | "features" | "guide";
+  activeSubPage: "overview" | "features" | "guide" | "remote-access";
 }
 
 import BaseLayout from "./BaseLayout.astro";
@@ -38,6 +38,13 @@ const { title, description, activeSubPage } = Astro.props;
           "navigation animation",
           activeSubPage === "guide" ? "text-accent" : "",
         ]}>guide</a
+      >
+      <a
+        href="/chuiko/remote-access/"
+        class:list={[
+          "navigation animation",
+          activeSubPage === "remote-access" ? "text-accent" : "",
+        ]}>remote access</a
       >
     </nav>
     <slot />

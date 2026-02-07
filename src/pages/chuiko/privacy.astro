@@ -1,0 +1,387 @@
+---
+import ChuikoLayout from "../../layouts/ChuikoLayout.astro";
+---
+
+<ChuikoLayout
+  title="Privacy Policy - Chuiko"
+  description="Privacy policy for Chuiko macOS app. We don't collect anything - your data stays on your computer and local network."
+>
+  <h1 class="heading">Privacy Policy for Chuiko</h1>
+
+  <section class="markdown">
+    <p class="text-neutral-600 dark:text-neutral-400 mb-8">
+      <strong>Last Updated:</strong> February 7, 2026
+    </p>
+
+    <div class="bg-blue-50 dark:bg-blue-950 border-l-4 border-blue-500 p-4 mb-8">
+      <p class="text-lg font-semibold mb-2">TL;DR</p>
+      <p>We don't collect anything. Your data stays on your computer and local network. Period.</p>
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>
+      Andrew Beresford ("we," "us," or "our") is committed to protecting your privacy.
+      This Privacy Policy applies to the Chuiko macOS application.
+    </p>
+    <p>
+      Unlike most apps, Chuiko is designed with privacy as a core principle. We don't
+      collect, store, transmit, or process any of your personal data.
+    </p>
+
+    <h2>2. Data Collection - What We Don't Collect</h2>
+    <p>
+      The App does <strong>NOT</strong> collect, store, or transmit any personal information or user data.
+    </p>
+
+    <h3>We do NOT collect:</h3>
+    <ul>
+      <li>Personal information (name, email, address, phone number)</li>
+      <li>Usage data or analytics</li>
+      <li>Device information or identifiers</li>
+      <li>Location data</li>
+      <li>Camera footage or video content</li>
+      <li>Network information (beyond what's needed for local connections)</li>
+      <li>Browsing history or app usage patterns</li>
+      <li>Diagnostic or crash reports (unless you manually send them)</li>
+      <li>Cookies or tracking data</li>
+      <li>Any other personal or non-personal information</li>
+    </ul>
+
+    <h3>We do NOT use:</h3>
+    <ul>
+      <li>Analytics platforms (Google Analytics, Mixpanel, etc.)</li>
+      <li>Crash reporting services (Sentry, Crashlytics, etc.)</li>
+      <li>Advertising networks or trackers</li>
+      <li>Telemetry or usage monitoring</li>
+      <li>Third-party SDKs or frameworks that collect data</li>
+      <li>Social media integrations</li>
+      <li>Cloud services or remote servers</li>
+    </ul>
+
+    <h2>3. Local Network Access</h2>
+    <p>
+      The App requires local network access to function, but this does <strong>NOT</strong> involve data
+      collection or transmission to us.
+    </p>
+
+    <h3>What local network access is used for:</h3>
+    <ul>
+      <li>Discovering your UniFi Protect controller via Bonjour/mDNS on your local network</li>
+      <li>Connecting to your controller's local REST API over HTTPS (typically port 443)</li>
+      <li>Streaming live video from your cameras via RTSP over TLS (typically port 7441)</li>
+    </ul>
+
+    <h3>Important facts:</h3>
+    <ul>
+      <li>All communication happens exclusively on <strong>YOUR</strong> local network</li>
+      <li>Nothing is sent to external servers, the internet, or us</li>
+      <li>We never see, access, or have any knowledge of your network activity</li>
+      <li>Your network traffic never leaves your local network</li>
+      <li>The App works completely offline (no internet required)</li>
+    </ul>
+
+    <h2>4. Video & Camera Data</h2>
+    <p>Your camera footage and video streams:</p>
+    <ul>
+      <li>Remain entirely on your local network</li>
+      <li>Are streamed directly from your cameras to your Mac</li>
+      <li>Are <strong>NEVER</strong> uploaded, stored, or transmitted by the App to external servers</li>
+      <li>Are <strong>NEVER</strong> seen, accessed, or collected by us</li>
+      <li>Stay under your complete and exclusive control</li>
+      <li>Are processed only on your local device</li>
+    </ul>
+    <p>
+      <strong>We have zero access to your camera footage. We couldn't see it even if we wanted to.</strong>
+    </p>
+
+    <h2>5. Credentials & Authentication</h2>
+    <p>Your UniFi Protect username and password:</p>
+    <ul>
+      <li>Are stored only in your Mac's Keychain (Apple's secure credential storage system)</li>
+      <li>Are never transmitted to us or any third party</li>
+      <li>Are only used to authenticate with <strong>YOUR</strong> local UniFi Protect controller</li>
+      <li>Are protected by macOS Keychain encryption and access controls</li>
+      <li>Are never logged, cached, or stored in plain text</li>
+      <li>Remain under Apple's security controls, not ours</li>
+    </ul>
+    <p><strong>We never see, store, or have access to your credentials.</strong></p>
+
+    <h2>6. Settings & Preferences</h2>
+    <p>App settings and preferences (popup position, notification preferences, etc.):</p>
+    <ul>
+      <li>Are stored locally on your Mac using standard macOS UserDefaults</li>
+      <li>Never leave your computer</li>
+      <li>Are not accessible to us or any third party</li>
+      <li>Are automatically deleted if you uninstall the App</li>
+      <li>Contain no personal information</li>
+    </ul>
+
+    <h2>7. Diagnostic Logs (Optional & User-Initiated Only)</h2>
+    <p>
+      If you experience technical issues, you may <strong>CHOOSE</strong> to send us diagnostic logs for
+      troubleshooting. This is entirely optional and requires manual action on your part.
+    </p>
+
+    <h3>What diagnostic logs MAY contain:</h3>
+    <ul>
+      <li>✅ macOS version and system information</li>
+      <li>✅ App version and build number</li>
+      <li>✅ Error messages and stack traces</li>
+      <li>✅ UniFi controller connection details (hostname or IP address only)</li>
+      <li>✅ Timestamp information</li>
+      <li>✅ Network configuration details (local network only)</li>
+    </ul>
+
+    <h3>What diagnostic logs do NOT contain:</h3>
+    <ul>
+      <li>❌ Video footage or camera recordings</li>
+      <li>❌ Personal information (name, email, etc.)</li>
+      <li>❌ Usernames or passwords</li>
+      <li>❌ Keychain data</li>
+      <li>❌ Browsing history</li>
+      <li>❌ Any sensitive personal data</li>
+    </ul>
+
+    <h3>How we handle diagnostic logs:</h3>
+    <ul>
+      <li>You must manually export and send them via email - nothing is automatic</li>
+      <li>Logs are received via email to <a href="mailto:chuiko.support@beez.ly">chuiko.support@beez.ly</a></li>
+      <li>Logs are stored securely on our email server</li>
+      <li>Logs are used <strong>ONLY</strong> to troubleshoot and resolve your specific issue</li>
+      <li>Logs are permanently deleted after your issue is resolved (typically within 30 days)</li>
+      <li>Logs are never shared with third parties</li>
+      <li>Logs are never used for marketing, analytics, or any other purpose</li>
+      <li>You can request deletion of your logs at any time by emailing us</li>
+    </ul>
+
+    <h3>How to send diagnostic logs:</h3>
+    <p>
+      The App includes an "Export Debug Logs" feature in Settings that creates a text file
+      on your Mac. You manually attach this file to an email and send it to us. Nothing
+      is sent automatically.
+    </p>
+
+    <h2>8. Third-Party Services</h2>
+    <p>
+      The App does <strong>NOT</strong> use any third-party services, SDKs, analytics platforms, or
+      integrations.
+    </p>
+
+    <h3>The App connects ONLY to:</h3>
+    <ul>
+      <li>Your local UniFi Protect controller (on your network)</li>
+      <li>Your local UniFi cameras (on your network)</li>
+    </ul>
+
+    <h3>There are no:</h3>
+    <ul>
+      <li>Analytics services</li>
+      <li>Advertising networks</li>
+      <li>Cloud storage providers</li>
+      <li>External APIs or web services</li>
+      <li>Social media integrations</li>
+      <li>Payment processors (payments handled by Apple)</li>
+    </ul>
+    <p><strong>The App is completely self-contained and local-only.</strong></p>
+
+    <h2>9. Apple App Store</h2>
+    <p>If you purchase the App through the Apple Mac App Store:</p>
+    <ul>
+      <li>Your payment is processed by Apple, not us</li>
+      <li>Apple collects payment and account information according to their privacy policy</li>
+      <li>We receive only aggregate sales data from Apple (number of sales, revenue)</li>
+      <li>We do <strong>NOT</strong> receive your personal information, payment details, or Apple ID</li>
+    </ul>
+    <p>
+      Review Apple's Privacy Policy: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/privacy/</a>
+    </p>
+
+    <h2>10. Children's Privacy</h2>
+    <p>
+      The App does not collect data from anyone, including children under 13 (or under 16
+      in the EEA).
+    </p>
+    <p>
+      Since we collect no data whatsoever, there is no risk to children's privacy. The App
+      is safe for users of all ages from a data collection perspective.
+    </p>
+    <p>
+      However, the App is designed for monitoring security cameras and may display video
+      footage that is not appropriate for children. Parental discretion is advised.
+    </p>
+
+    <h2>11. International Data Transfers</h2>
+    <p>
+      Since we don't collect any data, there are no international data transfers.
+    </p>
+    <p>
+      <strong>Your data stays on your Mac and local network. It never leaves your physical location.</strong>
+    </p>
+
+    <h2>12. Data Retention</h2>
+    <p>
+      Since we don't collect any data, we have nothing to retain.
+    </p>
+    <p>
+      The only exception is optional diagnostic logs, which are:
+    </p>
+    <ul>
+      <li>Sent voluntarily by you</li>
+      <li>Retained only as long as needed to resolve your issue</li>
+      <li>Deleted within 30 days or upon request</li>
+    </ul>
+
+    <h2>13. Your Rights</h2>
+    <p>
+      Under various data protection laws (GDPR, CCPA, etc.), you have rights regarding
+      your personal data. However, since we don't collect any personal data, these rights
+      are largely not applicable.
+    </p>
+    <p>For the sake of completeness:</p>
+    <ul>
+      <li><strong>Right to Access:</strong> Since we don't collect data, there is no data to access.</li>
+      <li><strong>Right to Deletion:</strong> Since we don't collect data, there is no data to delete.
+        (Exception: If you sent diagnostic logs, you can request their deletion at any time.)</li>
+      <li><strong>Right to Correction:</strong> Since we don't collect data, there is no data to correct.</li>
+      <li><strong>Right to Portability:</strong> Since we don't collect data, there is no data to export.</li>
+      <li><strong>Right to Object:</strong> Since we don't collect data, there is nothing to object to.</li>
+      <li><strong>Right to Restrict Processing:</strong> Since we don't process data, there is nothing to restrict.</li>
+    </ul>
+    <p>
+      If you sent us diagnostic logs and want them deleted, email <a href="mailto:chuiko.support@beez.ly">chuiko.support@beez.ly</a>.
+    </p>
+
+    <h2>14. Data Security</h2>
+    <p>
+      Since we don't collect, transmit, or store any user data on our servers, there is
+      no data for us to secure on our end. This is the most secure approach possible.
+    </p>
+
+    <h3>Your data security is handled by:</h3>
+    <ul>
+      <li>Your local network security (firewall, router security, etc.)</li>
+      <li>Your Mac's built-in security features (FileVault, Gatekeeper, etc.)</li>
+      <li>Apple's Keychain encryption for stored credentials</li>
+      <li>macOS security and access controls</li>
+    </ul>
+
+    <h3>Best practices for your security:</h3>
+    <ul>
+      <li>Keep your Mac and macOS updated</li>
+      <li>Use a strong password for your Mac account</li>
+      <li>Enable FileVault disk encryption</li>
+      <li>Secure your local network with strong Wi-Fi passwords</li>
+      <li>Keep your UniFi Protect controller updated</li>
+      <li>Use strong passwords for your UniFi account</li>
+    </ul>
+
+    <h2>15. Changes to This Privacy Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. Given our no-data-collection
+      approach, changes are unlikely unless required by law or if we add features.
+    </p>
+    <p>If we make changes:</p>
+    <ul>
+      <li>We will update the "Last Updated" date at the top</li>
+      <li>Material changes will be communicated via app update notes</li>
+      <li>Your continued use of the App constitutes acceptance of the updated policy</li>
+    </ul>
+    <p><strong>We will never change our core principle: no data collection.</strong></p>
+
+    <h2>16. Legal Bases for Processing (GDPR)</h2>
+    <p>For users in the European Economic Area (EEA):</p>
+    <p>
+      Since we don't collect or process personal data, GDPR obligations related to data
+      processing do not apply to most of the App's functionality.
+    </p>
+    <p>The only potential processing is:</p>
+    <ul>
+      <li><strong>Optional diagnostic logs:</strong> Processed based on your consent (you voluntarily send them)</li>
+      <li><strong>Legal basis:</strong> Consent (GDPR Article 6(1)(a))</li>
+    </ul>
+    <p>You can withdraw consent at any time by requesting deletion of your diagnostic logs.</p>
+
+    <h2>17. California Privacy Rights (CCPA)</h2>
+    <p>For California residents:</p>
+    <p>
+      Since we don't sell personal information and don't collect personal information in
+      any systematic way, most CCPA obligations do not apply.
+    </p>
+
+    <h3>We do not:</h3>
+    <ul>
+      <li>Sell personal information</li>
+      <li>Share personal information with third parties for marketing</li>
+      <li>Collect personal information through the App</li>
+      <li>Build user profiles or track users</li>
+    </ul>
+    <p>The only exception is optional diagnostic logs, which you voluntarily send for support.</p>
+
+    <h2>18. Contact Us</h2>
+    <p>Questions, concerns, or requests regarding this Privacy Policy?</p>
+    <p>
+      <strong>Andrew Beresford</strong><br>
+      Email: <a href="mailto:chuiko.support@beez.ly">chuiko.support@beez.ly</a><br>
+      Website: <a href="https://beez.ly/chuiko">https://beez.ly/chuiko</a>
+    </p>
+    <p>
+      For diagnostic log deletion requests, email <a href="mailto:chuiko.support@beez.ly">chuiko.support@beez.ly</a> with
+      "Delete Diagnostic Logs" in the subject line.
+    </p>
+
+    <h2>19. Data Protection Officer</h2>
+    <p>
+      We are not required to appoint a Data Protection Officer (DPO) as we do not
+      systematically collect or process personal data.
+    </p>
+    <p>
+      For privacy inquiries, contact <a href="mailto:chuiko.support@beez.ly">chuiko.support@beez.ly</a>.
+    </p>
+
+    <h2>20. Supervisory Authority</h2>
+    <p>
+      If you are in the EEA and have concerns about our privacy practices, you have the
+      right to lodge a complaint with your local data protection supervisory authority.
+    </p>
+    <p>
+      <strong>UK:</strong> Information Commissioner's Office (ICO) - <a href="https://ico.org.uk/" target="_blank" rel="noopener noreferrer">https://ico.org.uk/</a>
+    </p>
+
+    <h2>21. Compliance</h2>
+    <p>This App and Privacy Policy comply with:</p>
+    <ul>
+      <li>Apple App Store Privacy Guidelines</li>
+      <li>General Data Protection Regulation (GDPR) - European Union</li>
+      <li>California Consumer Privacy Act (CCPA) - United States</li>
+      <li>UK Data Protection Act 2018</li>
+      <li>Other applicable data protection and privacy laws</li>
+    </ul>
+    <p>
+      <strong>Our no-data-collection approach ensures automatic compliance with most privacy
+      regulations worldwide.</strong>
+    </p>
+
+    <h2>Summary</h2>
+    <div class="bg-neutral-100 dark:bg-neutral-800 p-6 rounded-lg">
+      <p class="font-semibold mb-4">Chuiko is a local-only, privacy-first application.</p>
+      <ul>
+        <li>We don't collect any data</li>
+        <li>Your data stays on your Mac and local network</li>
+        <li>Your video never leaves your network</li>
+        <li>We never see, access, or store any of your information</li>
+        <li>Optional diagnostic logs are only sent if you choose</li>
+        <li>We take your privacy seriously by simply not collecting data</li>
+      </ul>
+      <p class="font-semibold mt-4">Your cameras. Your network. Your data. Your privacy.</p>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-neutral-300 dark:border-neutral-700">
+      <p class="text-sm text-neutral-600 dark:text-neutral-400">
+        For questions or concerns, contact: <a href="mailto:chuiko.support@beez.ly">chuiko.support@beez.ly</a>
+      </p>
+      <p class="text-sm text-neutral-600 dark:text-neutral-400 mt-2">
+        Last Updated: February 7, 2026
+      </p>
+    </div>
+  </section>
+</ChuikoLayout>

@@ -3,15 +3,15 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
 ---
 
 <ChuikoLayout
-  title="Chuiko Remote Access - Using Chuiko Away From Home"
-  description="How to use Chuiko to monitor your UniFi Protect cameras when you're away from home using WireGuard, Teleport, or a third-party VPN."
+  title="Chuiko Remote Access - Using Chuiko Remotely"
+  description="How to use Chuiko to monitor your UniFi Protect cameras when you're away from the local network using WireGuard, Teleport, or a third-party VPN."
   activeSubPage="remote-access"
 >
   <h1 class="heading">Remote Access</h1>
 
   <section class="markdown">
     <p>
-      Chuiko connects directly to your UniFi Protect controller on your local network. When you're away from home, you'll need a VPN to create a secure tunnel back to your home network. Once connected, Chuiko works exactly as it does at home — no special configuration needed.
+      Chuiko connects directly to your UniFi Protect controller on your local network. When you're away from that network, you'll need a VPN to create a secure tunnel back. Once connected, Chuiko works exactly as it does locally — no special configuration needed.
     </p>
     <p>
       There are three main ways to set this up. Here's a quick comparison to help you choose:
@@ -39,7 +39,7 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
           <td><strong>Best for</strong></td>
           <td>Reliable, always-on access</td>
           <td>Quick, occasional access</td>
-          <td>No public IP at home</td>
+          <td>No public IP available</td>
         </tr>
         <tr>
           <td><strong>Extra software</strong></td>
@@ -61,8 +61,8 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
         </tr>
         <tr>
           <td><strong>Split tunnel</strong></td>
-          <td>Yes — only home traffic uses VPN</td>
-          <td>Yes — only home traffic uses VPN</td>
+          <td>Yes — only local network traffic uses VPN</td>
+          <td>Yes — only local network traffic uses VPN</td>
           <td>Usually — depends on provider</td>
         </tr>
         <tr>
@@ -84,7 +84,7 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
 
     <h2>Option 1: WireGuard VPN (Recommended)</h2>
     <p>
-      WireGuard is a fast, modern VPN built into your UniFi Dream Machine. It gives you a permanent, reliable connection back to your home network whenever you need it. This is the best option if your home internet has a public IP address.
+      WireGuard is a fast, modern VPN built into your UniFi Dream Machine. It gives you a permanent, reliable connection back to your local network whenever you need it. This is the best option if your network has a public IP address.
     </p>
 
     <h3>What you'll need</h3>
@@ -117,7 +117,7 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
 
     <h4>Tips</h4>
     <ul>
-      <li>WireGuard uses <strong>split tunnelling</strong> by default, which means only traffic to your home network goes through the VPN. Everything else (web browsing, email, etc.) uses your normal internet connection.</li>
+      <li>WireGuard uses <strong>split tunnelling</strong> by default, which means only traffic to the remote network goes through the VPN. Everything else (web browsing, email, etc.) uses your normal internet connection.</li>
       <li>You can create multiple client configurations if you have several devices.</li>
       <li>The VPN configuration is permanent — you only need to set it up once.</li>
       <li>If your UniFi gateway is behind another router (e.g. an ISP-supplied one), you may need to forward <strong>UDP port 51820</strong> on that router to your UniFi gateway. This is a WireGuard requirement, not a Chuiko one.</li>
@@ -163,22 +163,22 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
 
     <h2>Option 3: Third-Party VPN</h2>
     <p>
-      If your home internet doesn't have a public IP address (common with some ISPs, mobile broadband, or CGNAT), you can use a third-party VPN service like <a href="https://tailscale.com/">Tailscale</a> to connect back to your home network. These services work by relaying your connection through their infrastructure, so no public IP or port forwarding is needed.
+      If your network doesn't have a public IP address (common with some ISPs, mobile broadband, or CGNAT), you can use a third-party VPN service like <a href="https://tailscale.com/">Tailscale</a> to connect back to your local network. These services work by relaying your connection through their infrastructure, so no public IP or port forwarding is needed.
     </p>
 
     <h3>General approach</h3>
     <ol>
-      <li>Install the VPN software on both your Mac and a device on your home network (this could be a Raspberry Pi, NAS, or any always-on computer)</li>
-      <li>The home device acts as a gateway, giving your Mac access to the local network</li>
-      <li>Once connected, Chuiko can reach your UniFi Protect controller as if you were at home</li>
+      <li>Install the VPN software on both your Mac and a device on the same network as your UniFi controller (this could be a Raspberry Pi, NAS, or any always-on computer)</li>
+      <li>That device acts as a gateway, giving your Mac access to the local network</li>
+      <li>Once connected, Chuiko can reach your UniFi Protect controller as if you were on the local network</li>
     </ol>
 
     <h3>Things to consider</h3>
     <ul>
-      <li>You'll need an always-on device at home running the VPN software (your UniFi gateway can't run third-party VPN clients).</li>
+      <li>You'll need an always-on device on the local network running the VPN software (your UniFi gateway can't run third-party VPN clients).</li>
       <li>Setup varies depending on the provider — refer to their documentation for specific instructions.</li>
       <li>Most providers offer free tiers that are sufficient for this use case.</li>
-      <li>Make sure the VPN is configured to route traffic to your home network's subnet (e.g. 192.168.1.0/24) through the tunnel.</li>
+      <li>Make sure the VPN is configured to route traffic to the local network's subnet (e.g. 192.168.1.0/24) through the tunnel.</li>
     </ul>
 
     <hr />

@@ -1,0 +1,209 @@
+---
+import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
+---
+
+<ChuikoLayout
+  title="Chuiko Remote Access - Using Chuiko Remotely"
+  description="How to use Chuiko to monitor your UniFi Protect cameras when you're away from the local network using WireGuard, Teleport, or a third-party VPN."
+  activeSubPage="remote-access"
+>
+  <h1 class="heading">Remote Access</h1>
+
+  <section class="markdown">
+    <p>
+      Chuiko connects directly to your UniFi Protect controller on your local network. When you're away from that network, you'll need a VPN to create a secure tunnel back. Once connected, Chuiko works exactly as it does locally — no special configuration needed.
+    </p>
+    <p>
+      There are three main ways to set this up. Here's a quick comparison to help you choose:
+    </p>
+
+    <h2>Comparison</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>WireGuard</th>
+          <th>Teleport</th>
+          <th>Third-Party VPN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Difficulty</strong></td>
+          <td>Moderate</td>
+          <td>Easy</td>
+          <td>Moderate</td>
+        </tr>
+        <tr>
+          <td><strong>Best for</strong></td>
+          <td>Reliable, always-on access</td>
+          <td>Quick, occasional access</td>
+          <td>No public IP available</td>
+        </tr>
+        <tr>
+          <td><strong>Extra software</strong></td>
+          <td>WireGuard app</td>
+          <td>WiFiman app</td>
+          <td>Varies (e.g. Tailscale)</td>
+        </tr>
+        <tr>
+          <td><strong>Public IP needed</strong></td>
+          <td>Yes</td>
+          <td>No</td>
+          <td>No</td>
+        </tr>
+        <tr>
+          <td><strong>Persistent config</strong></td>
+          <td>Yes — set up once</td>
+          <td>No — invitations expire</td>
+          <td>Yes — set up once</td>
+        </tr>
+        <tr>
+          <td><strong>Split tunnel</strong></td>
+          <td>Yes — only local network traffic uses VPN</td>
+          <td>Yes — only local network traffic uses VPN</td>
+          <td>Usually — depends on provider</td>
+        </tr>
+        <tr>
+          <td><strong>Performance</strong></td>
+          <td>Excellent</td>
+          <td>Excellent</td>
+          <td>Good</td>
+        </tr>
+        <tr>
+          <td><strong>Port forwarding</strong></td>
+          <td>UDP 51820 (for the VPN, not Chuiko)</td>
+          <td>None</td>
+          <td>None</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr />
+
+    <h2>Option 1: WireGuard VPN (Recommended)</h2>
+    <p>
+      WireGuard is a fast, modern VPN built into your UniFi Dream Machine. It gives you a permanent, reliable connection back to your local network whenever you need it. This is the best option if your network has a public IP address.
+    </p>
+
+    <h3>What you'll need</h3>
+    <ul>
+      <li>A UniFi Dream Machine (or gateway) with a <strong>public IP address</strong></li>
+      <li>The free <a href="https://www.wireguard.com/install/">WireGuard app</a> on your Mac</li>
+    </ul>
+
+    <h3>Set up WireGuard on your UniFi controller</h3>
+    <ol>
+      <li>Open the UniFi Network web interface</li>
+      <li>Go to <strong>Settings</strong> &rarr; <strong>VPN</strong></li>
+      <li>Select <strong>WireGuard</strong> and enable it</li>
+      <li>Click <strong>Create Client</strong> and give it a name (e.g. "MacBook")</li>
+      <li>Download the configuration file — this contains everything the WireGuard app needs</li>
+    </ol>
+
+    <h3>Set up WireGuard on your Mac</h3>
+    <ol>
+      <li>Install the <a href="https://www.wireguard.com/install/">WireGuard app</a> from the Mac App Store or website</li>
+      <li>Open WireGuard and click <strong>Import Tunnel(s) from File</strong></li>
+      <li>Select the configuration file you downloaded</li>
+      <li>Click <strong>Activate</strong> to connect</li>
+    </ol>
+
+    <h3>Using Chuiko remotely</h3>
+    <p>
+      Once WireGuard is connected, open Chuiko as normal. It will connect to your UniFi Protect controller through the VPN tunnel — no changes to your Chuiko settings are needed.
+    </p>
+
+    <h4>Tips</h4>
+    <ul>
+      <li>WireGuard uses <strong>split tunnelling</strong> by default, which means only traffic to the remote network goes through the VPN. Everything else (web browsing, email, etc.) uses your normal internet connection.</li>
+      <li>You can create multiple client configurations if you have several devices.</li>
+      <li>The VPN configuration is permanent — you only need to set it up once.</li>
+      <li>If your UniFi gateway is behind another router (e.g. an ISP-supplied one), you may need to forward <strong>UDP port 51820</strong> on that router to your UniFi gateway. This is a WireGuard requirement, not a Chuiko one.</li>
+    </ul>
+
+    <hr />
+
+    <h2>Option 2: Teleport via WiFiman</h2>
+    <p>
+      Teleport is Ubiquiti's own remote access VPN. It's the easiest option to get started with because it doesn't require a public IP address or any port forwarding. Under the hood, it uses WireGuard, so performance is excellent.
+    </p>
+
+    <h3>What you'll need</h3>
+    <ul>
+      <li>A UniFi Dream Machine (or gateway)</li>
+      <li>The free <a href="https://ui.com/download/app/wifiman-desktop">WiFiman app</a> on your Mac</li>
+    </ul>
+
+    <h3>Set up Teleport</h3>
+    <ol>
+      <li>Open the UniFi Network web interface</li>
+      <li>Go to <strong>Settings</strong> &rarr; <strong>VPN</strong></li>
+      <li>Select <strong>Teleport</strong> and enable it</li>
+      <li>Click <strong>Generate Invitation</strong> — this creates a link</li>
+      <li>Open the invitation link on your Mac</li>
+      <li>The WiFiman app will open and configure the connection automatically</li>
+    </ol>
+
+    <h3>Using Chuiko remotely</h3>
+    <p>
+      Open WiFiman and connect via Teleport. Once connected, open Chuiko as normal — it will reach your UniFi Protect controller through the tunnel.
+    </p>
+
+    <h4>Things to be aware of</h4>
+    <ul>
+      <li>Invitation links <strong>expire after 24 hours</strong> and can only be used by one device.</li>
+      <li>If your invitation is revoked or expires, you'll need to generate a new one from the UniFi web interface.</li>
+      <li>You <strong>must use the WiFiman app</strong> — standard WireGuard clients won't work with Teleport invitations.</li>
+      <li>Like WireGuard, Teleport uses split tunnelling, so your normal internet traffic isn't affected.</li>
+    </ul>
+
+    <hr />
+
+    <h2>Option 3: Third-Party VPN</h2>
+    <p>
+      If your network doesn't have a public IP address (common with some ISPs, mobile broadband, or CGNAT), you can use a third-party VPN service like <a href="https://tailscale.com/">Tailscale</a> to connect back to your local network. These services work by relaying your connection through their infrastructure, so no public IP or port forwarding is needed.
+    </p>
+
+    <h3>General approach</h3>
+    <ol>
+      <li>Install the VPN software on both your Mac and a device on the same network as your UniFi controller (this could be a Raspberry Pi, NAS, or any always-on computer)</li>
+      <li>That device acts as a gateway, giving your Mac access to the local network</li>
+      <li>Once connected, Chuiko can reach your UniFi Protect controller as if you were on the local network</li>
+    </ol>
+
+    <h3>Things to consider</h3>
+    <ul>
+      <li>You'll need an always-on device on the local network running the VPN software (your UniFi gateway can't run third-party VPN clients).</li>
+      <li>Setup varies depending on the provider — refer to their documentation for specific instructions.</li>
+      <li>Most providers offer free tiers that are sufficient for this use case.</li>
+      <li>Make sure the VPN is configured to route traffic to the local network's subnet (e.g. 192.168.1.0/24) through the tunnel.</li>
+    </ul>
+
+    <hr />
+
+    <h2>Troubleshooting</h2>
+
+    <h3>Chuiko shows "Disconnected" after connecting VPN</h3>
+    <ul>
+      <li>Check that your VPN is connected and active</li>
+      <li>Verify you can reach your UniFi controller's local IP address — try opening it in a web browser</li>
+      <li>Make sure Chuiko is configured with the controller's <strong>local IP address</strong>, not a public or cloud address</li>
+    </ul>
+
+    <h3>Video streams won't load over VPN</h3>
+    <ul>
+      <li>Video streaming requires more bandwidth than the management connection — try switching to a <strong>lower stream quality</strong> in Chuiko settings</li>
+      <li>Check that your VPN is routing traffic to the camera subnet (cameras may be on a different VLAN)</li>
+      <li>Ensure RTSP port <strong>7441</strong> is accessible through the VPN tunnel</li>
+    </ul>
+
+    <h3>Connection is slow or video stutters</h3>
+    <ul>
+      <li>Switch to <strong>Low</strong> stream quality in Chuiko settings — this significantly reduces bandwidth requirements</li>
+      <li>If using Teleport or a third-party VPN with relay servers, performance depends on the relay's location and your internet speed at both ends</li>
+      <li>WireGuard with a direct connection (public IP) generally offers the best performance</li>
+    </ul>
+  </section>
+</ChuikoLayout>

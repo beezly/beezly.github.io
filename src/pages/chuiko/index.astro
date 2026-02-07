@@ -1,0 +1,119 @@
+---
+import ChuikoLayout from "../../layouts/ChuikoLayout.astro";
+---
+
+<ChuikoLayout
+  title="Chuiko - UniFi Protect Menu Bar App for macOS"
+  description="Monitor your UniFi Protect cameras from the macOS menu bar. Live video streaming, smart detection alerts, and instant access — all completely private."
+  activeSubPage="overview"
+>
+  <!-- Hero -->
+  <section class="flex flex-col items-center py-12 text-center">
+    <img
+      src="/chuiko/app-icon.png"
+      alt="Chuiko app icon"
+      class="mb-6 h-32 w-32 rounded-2xl shadow-lg ring-1 ring-accent"
+    />
+    <h1 class="heading">Chuiko</h1>
+    <p class="paragraph max-w-xl">
+      Your UniFi Protect cameras, always one click away.
+    </p>
+    <div class="mt-8 flex flex-col items-center gap-3">
+      <span class="button px-6 py-2 text-lg cursor-default">Coming Soon</span>
+      <p class="text-sm opacity-60">Currently in alpha testing</p>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Screenshots -->
+  <section class="py-6">
+    <h2 class="section-heading">S E E &nbsp; I T &nbsp; I N &nbsp; A C T I O N</h2>
+    <div class="grid gap-8 py-6 md:grid-cols-2">
+      <div class="flex flex-col items-center gap-3">
+        <img
+          src="/chuiko/screenshot-menu.png"
+          alt="Chuiko menu bar showing camera list with status indicators"
+          class="rounded-lg ring-1 ring-accent"
+        />
+        <p class="text-sm opacity-70">Camera list with live status indicators</p>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <img
+          src="/chuiko/screenshot-popup.png"
+          alt="Chuiko video popup showing live camera feed"
+          class="rounded-lg ring-1 ring-accent"
+        />
+        <p class="text-sm opacity-70">Live video popup from a camera feed</p>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Key Features -->
+  <section class="py-6">
+    <h2 class="section-heading">K E Y &nbsp; F E A T U R E S</h2>
+    <div class="my-8 grid gap-6 md:grid-cols-2">
+      <div class="ring-background hover:bg-accent hover:ring-accent group animation rounded-lg p-6 shadow-lg ring-3 hover:shadow-none dark:shadow-2xl">
+        <h3 class="text-foreground group-hover:text-background animation mb-2 text-xl font-semibold">
+          Live Video Streaming
+        </h3>
+        <p class="text-foreground/80 group-hover:text-background/90 animation">
+          Watch your cameras in real time with RTSP streaming. Open up to four simultaneous video popups at configurable quality levels.
+        </p>
+      </div>
+      <div class="ring-background hover:bg-accent hover:ring-accent group animation rounded-lg p-6 shadow-lg ring-3 hover:shadow-none dark:shadow-2xl">
+        <h3 class="text-foreground group-hover:text-background animation mb-2 text-xl font-semibold">
+          Smart Detection Alerts
+        </h3>
+        <p class="text-foreground/80 group-hover:text-background/90 animation">
+          Real-time motion events via WebSocket. Get instant notifications for people, vehicles, animals, and packages with per-camera controls.
+        </p>
+      </div>
+      <div class="ring-background hover:bg-accent hover:ring-accent group animation rounded-lg p-6 shadow-lg ring-3 hover:shadow-none dark:shadow-2xl">
+        <h3 class="text-foreground group-hover:text-background animation mb-2 text-xl font-semibold">
+          Auto-Show on Motion
+        </h3>
+        <p class="text-foreground/80 group-hover:text-background/90 animation">
+          Automatically pop up live video when motion is detected, then dismiss when it stops. See what's happening without lifting a finger.
+        </p>
+      </div>
+      <div class="ring-background hover:bg-accent hover:ring-accent group animation rounded-lg p-6 shadow-lg ring-3 hover:shadow-none dark:shadow-2xl">
+        <h3 class="text-foreground group-hover:text-background animation mb-2 text-xl font-semibold">
+          Menu Bar Access
+        </h3>
+        <p class="text-foreground/80 group-hover:text-background/90 animation">
+          Always one click away. View all cameras at a glance with colour-coded status indicators, right from your menu bar.
+        </p>
+      </div>
+      <div class="ring-background hover:bg-accent hover:ring-accent group animation rounded-lg p-6 shadow-lg ring-3 hover:shadow-none dark:shadow-2xl">
+        <h3 class="text-foreground group-hover:text-background animation mb-2 text-xl font-semibold">
+          Completely Private
+        </h3>
+        <p class="text-foreground/80 group-hover:text-background/90 animation">
+          Runs entirely on your local network. No cloud services, no telemetry, no data leaves your machine. Credentials stored in macOS Keychain.
+        </p>
+      </div>
+      <div class="ring-background hover:bg-accent hover:ring-accent group animation rounded-lg p-6 shadow-lg ring-3 hover:shadow-none dark:shadow-2xl">
+        <h3 class="text-foreground group-hover:text-background animation mb-2 text-xl font-semibold">
+          Native macOS
+        </h3>
+        <p class="text-foreground/80 group-hover:text-background/90 animation">
+          A fast, lightweight experience that feels right at home on your Mac. Requires macOS 14.0 or later.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Bottom CTA -->
+  <section class="flex flex-col items-center py-12 text-center">
+    <h2 class="pb-6 text-3xl font-semibold">Interested?</h2>
+    <p class="paragraph max-w-lg pb-6">
+      Chuiko is currently in alpha testing and will be available soon. Check back for updates.
+    </p>
+    <span class="button px-6 py-2 text-lg cursor-default">Coming Soon</span>
+  </section>
+</ChuikoLayout>

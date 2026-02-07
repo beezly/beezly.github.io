@@ -1,0 +1,74 @@
+---
+import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
+---
+
+<ChuikoLayout
+  title="Chuiko Features - UniFi Protect Menu Bar App"
+  description="Detailed features of Chuiko: live RTSP streaming, smart detection alerts, auto-show on motion, menu bar interface, privacy-first design, and native macOS experience."
+  activeSubPage="features"
+>
+  <h1 class="heading">Features</h1>
+
+  <section class="markdown">
+    <h2>Live Video Streaming</h2>
+    <p>
+      Chuiko connects directly to your cameras via RTSP, delivering smooth live video with no cloud relay or third-party service in the middle.
+    </p>
+    <ul>
+      <li>Open up to <strong>four simultaneous video popups</strong>, each with independent controls</li>
+      <li>Choose between <strong>High, Medium, and Low</strong> quality levels to balance clarity and bandwidth</li>
+      <li><strong>Copy or save snapshots</strong> from any live feed with a right-click</li>
+      <li>Streams <strong>auto-reconnect</strong> if the connection drops — no manual intervention needed</li>
+      <li>Drag to reposition and resize popups while maintaining <strong>16:9 aspect ratio</strong></li>
+      <li>Configurable <strong>popup position</strong> — stack in any screen corner</li>
+    </ul>
+
+    <h2>Motion Detection &amp; Smart Alerts</h2>
+    <p>
+      Real-time motion events arrive instantly via a persistent WebSocket connection to your UniFi Protect controller — no polling, no delay.
+    </p>
+    <ul>
+      <li>Supports UniFi Protect <strong>smart detection types</strong>: people, vehicles, animals, and packages</li>
+      <li><strong>Per-camera monitoring controls</strong> — enable or disable motion alerts independently for each camera</li>
+      <li><strong>Auto-show popup on motion</strong> — automatically opens a live feed when activity is detected</li>
+      <li><strong>Auto-dismiss</strong> — motion-triggered popups close automatically 10 seconds after motion ends</li>
+      <li>Optional <strong>macOS notifications</strong> for motion events</li>
+      <li>Pulsing <strong>orange status indicator</strong> shows active motion at a glance</li>
+    </ul>
+
+    <h2>Menu Bar Interface</h2>
+    <p>
+      Everything is accessible from a single click on the menu bar icon. The dropdown gives you a complete overview of your camera system.
+    </p>
+    <ul>
+      <li><strong>Colour-coded status indicators</strong> — green for online, orange (pulsing) for motion, grey for offline</li>
+      <li>Full <strong>camera list</strong> with name, status text, and play button for each camera</li>
+      <li><strong>Connection status</strong> displayed at the top — connected, connecting, reconnecting, or disconnected</li>
+      <li><strong>Active events counter</strong> showing the number of cameras with current motion</li>
+      <li>Quick access to <strong>settings</strong>, <strong>refresh</strong>, and <strong>quit</strong> in the footer</li>
+      <li><strong>Debug menu</strong> available by holding Option while clicking the icon</li>
+    </ul>
+
+    <h2>Privacy &amp; Security</h2>
+    <p>
+      Chuiko is designed with privacy as a core principle. Nothing leaves your local network.
+    </p>
+    <ul>
+      <li><strong>Entirely local</strong> — connects directly to your UniFi Protect controller on your network</li>
+      <li>Credentials stored securely in the <strong>macOS Keychain</strong></li>
+      <li>All controller connections use <strong>HTTPS/TLS</strong></li>
+      <li>Video streams use encrypted <strong>RTSPS</strong> (RTSP over TLS)</li>
+      <li><strong>No telemetry</strong>, no analytics, no external network calls whatsoever</li>
+      <li>No cloud account required — works with <strong>local UniFi accounts</strong></li>
+    </ul>
+
+    <h2>System Requirements</h2>
+    <ul>
+      <li><strong>macOS 14.0</strong> (Sonoma) or later</li>
+      <li>UniFi Protect controller — Cloud Key Gen2+, Dream Machine, or dedicated NVR</li>
+      <li>Network access to your UniFi Protect controller</li>
+      <li><strong>RTSP streaming enabled</strong> on the cameras you want to view</li>
+      <li>A <strong>local UniFi account</strong> (not a UI.com cloud account)</li>
+    </ul>
+  </section>
+</ChuikoLayout>

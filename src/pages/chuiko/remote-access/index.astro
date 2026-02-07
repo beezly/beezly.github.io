@@ -73,7 +73,7 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
         </tr>
         <tr>
           <td><strong>Port forwarding</strong></td>
-          <td>UDP 51820</td>
+          <td>UDP 51820 (for the VPN, not Chuiko)</td>
           <td>None</td>
           <td>None</td>
         </tr>
@@ -120,7 +120,7 @@ import ChuikoLayout from "../../../layouts/ChuikoLayout.astro";
       <li>WireGuard uses <strong>split tunnelling</strong> by default, which means only traffic to your home network goes through the VPN. Everything else (web browsing, email, etc.) uses your normal internet connection.</li>
       <li>You can create multiple client configurations if you have several devices.</li>
       <li>The VPN configuration is permanent — you only need to set it up once.</li>
-      <li>If you're behind another router (e.g. an ISP-supplied one), you may need to forward <strong>UDP port 51820</strong> to your UniFi gateway.</li>
+      <li>If your UniFi gateway is behind another router (e.g. an ISP-supplied one), you may need to forward <strong>UDP port 51820</strong> on that router to your UniFi gateway. This is a WireGuard requirement, not a Chuiko one.</li>
     </ul>
 
     <hr />

@@ -32,8 +32,9 @@ The site auto-deploys to GitHub Pages when changes are pushed to the `master` br
 ### Layouts & Components (Ryze Theme)
 - `src/layouts/BaseLayout.astro` - Base HTML layout with header, footer, dark mode, and GoatCounter analytics
 - `src/layouts/BlogLayout.astro` - Blog post layout with reading progress bar, metadata, and tags
+- `src/layouts/ChuikoLayout.astro` - Shared layout for Chuiko pages with sub-navigation (overview, features, guide)
 - `src/components/Header.astro` - Site header with navigation, theme toggle, and RSS link
-- `src/components/Navigation.astro` - Navigation menu (archive, tags, projects)
+- `src/components/Navigation.astro` - Navigation menu (chuiko, archive, tags, projects)
 - `src/components/Footer.astro` - Site footer with social links and copyright
 - `src/components/Socials.astro` - Social media links (LinkedIn, GitHub)
 - `src/components/Introduction.astro` - Homepage introduction/bio section (describes site as "archive" of technical posts)
@@ -48,6 +49,9 @@ The site auto-deploys to GitHub Pages when changes are pushed to the `master` br
 ### Pages
 - `src/pages/index.astro` - Homepage with Introduction and Recent Posts sections (no newsletter)
 - `src/pages/projects.astro` - Projects page listing external projects and documentation
+- `src/pages/chuiko/index.astro` - Chuiko landing page (hero, screenshots, feature grid, CTA)
+- `src/pages/chuiko/features/index.astro` - Detailed Chuiko feature descriptions
+- `src/pages/chuiko/guide/index.astro` - Chuiko user guide (adapted from docs/user-guide.md)
 - `src/pages/404.astro` - Custom 404 error page with back-to-home link
 - `src/pages/[...slug].astro` - Dynamic routes for blog posts (URL: `/slug/`)
 - `src/pages/archive/[page].astro` - Paginated archive of all posts
@@ -71,6 +75,7 @@ The site auto-deploys to GitHub Pages when changes are pushed to the `master` br
   - `CNAME` - Custom domain configuration (beez.ly)
   - `favicon.svg` - Site favicon
   - `fonts/` - Web fonts
+  - `chuiko/` - Chuiko assets (app-icon.png, screenshot-menu.png, screenshot-popup.png)
 
 ## Writing Blog Posts
 
@@ -134,6 +139,9 @@ Use `<!--more-->` to mark the excerpt cutoff point for the homepage listing.
 ## URL Structure
 
 - Homepage: `/`
+- Chuiko (overview): `/chuiko/` - Marketing landing page
+- Chuiko (features): `/chuiko/features/` - Detailed feature descriptions
+- Chuiko (guide): `/chuiko/guide/` - User guide and troubleshooting
 - Projects: `/projects` - Lists external projects and documentation
 - Blog posts: `/slug/` (e.g., `/managing-unifi-content-filters-with-cli-tool/`)
 - Archive (all): `/archive/1/` (paginated)
@@ -172,13 +180,14 @@ Use `<!--more-->` to mark the excerpt cutoff point for the homepage listing.
 - **No Newsletter Section**: Removed entirely
 
 ### Navigation
+- **chuiko** - Chuiko macOS app marketing pages (with sub-nav: overview, features, guide)
 - **archive** - All posts paginated
 - **tags** - Browse posts by tag
 - **projects** - External projects and documentation
 
-### External Projects
-- **Unifi APIs Documentation** (https://beez.ly/unifi-apis)
-  - Comprehensive API documentation for Ubiquiti Unifi Network Controllers
+### Projects
+- **Chuiko** (/chuiko/) - macOS menu bar app for monitoring UniFi Protect cameras (internal link)
+- **Unifi APIs Documentation** (https://beez.ly/unifi-apis) - API documentation for Ubiquiti Unifi Network Controllers
 
 ## Important Notes
 

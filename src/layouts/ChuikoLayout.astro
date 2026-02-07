@@ -1,0 +1,45 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  activeSubPage: "overview" | "features" | "guide";
+}
+
+import BaseLayout from "./BaseLayout.astro";
+
+const { title, description, activeSubPage } = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  author="Andrew Beresford"
+  url={`https://beez.ly/chuiko`}
+>
+  <div class="center">
+    <nav class="flex items-center justify-center gap-4 pb-6">
+      <a
+        href="/chuiko/"
+        class:list={[
+          "navigation animation",
+          activeSubPage === "overview" ? "text-accent" : "",
+        ]}>overview</a
+      >
+      <a
+        href="/chuiko/features/"
+        class:list={[
+          "navigation animation",
+          activeSubPage === "features" ? "text-accent" : "",
+        ]}>features</a
+      >
+      <a
+        href="/chuiko/guide/"
+        class:list={[
+          "navigation animation",
+          activeSubPage === "guide" ? "text-accent" : "",
+        ]}>guide</a
+      >
+    </nav>
+    <slot />
+  </div>
+</BaseLayout>
